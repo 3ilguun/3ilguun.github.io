@@ -1,0 +1,74 @@
+@import settings
+@import mixins
+
+*,
+*:before,
+*:after
+  box-sizing: inherit
+
+html
+  font-size: $base-font-size
+  line-height: $base-line-height
+  background-color: $color-white
+  box-sizing: border-box
+  -webkit-font-smoothing: antialiased
+  -ms-text-size-adjust: 100%
+  -webkit-text-size-adjust: 100%
+
+body
+  margin: 0
+  color: $color-grey
+  font-family: $base-font-family
+  font-weight: 400
+  text-rendering: optimizeLegibility
+
+article,
+aside,
+footer,
+header,
+nav,
+section,
+figcaption,
+figure,
+main
+  display: block
+
+a
+  color: $color-black
+  background-color: transparent
+  border-bottom: 1px solid $color-grey
+  -webkit-text-decoration-skip: objects
+  text-decoration: none
+
+  &:active
+    outline-width: 0
+
+  &:hover
+    color: $color-grey
+
+h1
+  color: $color-black
+
+img
+  border-style: none
+  vertical-align: middle
+
+svg:not(:root)
+  overflow: hidden
+
+[hidden]
+  display: none
+
+ul
+	padding-left: 0
+	list-style-type: none
+
+p
+  margin-top: 0
+
+  +media(sm)
+    line-height: 1.5
+
+  +media(md)
+    font-size: 1.25rem
+    +rem(margin-bottom, 1.5rem)

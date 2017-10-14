@@ -1,0 +1,15 @@
+{
+  "name": "Portfolio",
+  "author": "Bilguun",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "lazysizes": "^3.0.0",
+    "fontfaceobserver": "^2.0.13"
+  }
+}
