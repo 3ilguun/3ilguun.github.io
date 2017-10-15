@@ -10,6 +10,7 @@
   ],
   "dependencies": {
     "lazysizes": "^3.0.0",
-    "fontfaceobserver": "^2.0.13"
+    "fontfaceobserver": "^2.0.13",
+    "html5shiv": "^3.7.3"
   }
 }
