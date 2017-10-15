@@ -17,6 +17,7 @@
     "gulp-imagemin": "*",
     "gulp-inline-source": "*",
     "gulp-plumber": "*",
+    "gulp-rename": "*",
     "gulp-sass": "*",
     "gulp-size": "*",
     "gulp-uglify": "*",

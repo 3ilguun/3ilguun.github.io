@@ -1,13 +1,18 @@
+$base-font-size: 16
+
 @import global
 
 @font-face
-	font-family: 'Sofia Pro'
-  src: local("Sofia Pro Regular Regular"), local("SofiaProRegular"), url('assets/fonts/SofiaProRegular.woff2') format("woff2"), url('assets/fonts/SofiaProRegular.woff') format("woff"), url('assets/fonts/SofiaProRegular.ttf') format("truetype")
+	font-family: 'SpoqaHanSans'
+  src: local("SpoqaHanSans-Regular"), local("SpoqaHanSansRegular"), url('/assets/fonts/SpoqaHanSans-Regular.woff2') format("woff2"), url('/assets/fonts/SpoqaHanSans-Regular.woff') format("woff"), url('/assets/fonts/SpoqaHanSans-Regular.ttf') format("truetype")
   font-weight: normal
   font-style: normal
 
 .fonts-loaded body
-	font-family: 'Sofia Pro', $base-font-family
+	font-family: 'SpoqaHanSans', $base-font-family
+
+body
+	word-break: keep-all
 
 .container
 	+media(sm)
@@ -19,17 +24,15 @@
 		padding-right: 5%
 
 .container--sm
-	max-width: 43.75em
+	max-width: 40em
 
 p
-  margin-top: 0
+	line-height: 1.8
+	letter-spacing: .05em
+	margin-top: 0
 
-  +media(sm)
-    line-height: 1.5
-
-  +media(md)
-    font-size: 1.25rem
-    +rem(margin-bottom, 1.5rem)
+	+media(md)
+  	+rem(margin-bottom, 1.5rem)
 
 /*
 	Hero

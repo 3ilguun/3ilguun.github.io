@@ -9,6 +9,7 @@ const htmlmin = require('gulp-htmlmin');
 const imagemin = require('gulp-imagemin');
 const inlineSource = require('gulp-inline-source');
 const plumber = require('gulp-plumber');
+const rename = require('gulp-rename');
 const sass = require('gulp-sass');
 const size = require('gulp-size');
 const uglify = require('gulp-uglify');
@@ -43,7 +44,7 @@ gulp.task('js', () => {
 });
 
 gulp.task('html', () => {
-  return gulp.src('src/*.html')
+  return gulp.src('src/**/*.html')
     .pipe(plumber())
     .pipe(useref({searchPath: ['.']}))
     .pipe(gif(/\.css$/, cssnano({safe: true, autoprefixer: false})))
@@ -79,6 +80,14 @@ gulp.task('inlineSource', () => {
     .pipe(gulp.dest(''));
 });
 
+gulp.task('copy', () => {
+  return gulp.src('kr.html')
+    .pipe(rename('index.html'))
+    .pipe(gulp.dest('kr'));
+});
+
+gulp.task('delete', del.bind(null, 'kr.html'));
+
 gulp.task('wiredep', () => {
   gulp.src('src/sass/*.sass')
     .pipe(wiredep({
@@ -86,14 +95,14 @@ gulp.task('wiredep', () => {
     }))
     .pipe(gulp.dest('src/sass'));
 
-  gulp.src('src/*.html')
+  gulp.src('src/**/*.html')
     .pipe(wiredep({
       ignorePath: /^(\.\.\/)*\.\./
     }))
     .pipe(gulp.dest(''));
 });
 
-gulp.task('clean', del.bind(null, 'assets'));
+gulp.task('clean', del.bind(null, ['assets', 'kr']));
 
 gulp.task('serve', () => {
   runSequence(['clean', 'wiredep'], ['images', 'sass', 'js', 'fonts'], () => {
@@ -108,12 +117,12 @@ gulp.task('serve', () => {
     });
 
     gulp.watch([
-      'src/*.html'
+      'src/**/*.html'
     ]).on('change', reload);
 
     gulp.watch('src/sass/*.sass', ['sass']);
     gulp.watch('src/js/**/*.js', ['js']);
-    gulp.watch('src/*.html', ['html']);
+    gulp.watch('src/**/*.html', ['html']);
     gulp.watch('src/images/**/*', ['images']);
     gulp.watch('src/fonts/**/*', ['fonts']);
     gulp.watch('bower.json', ['wiredep', 'fonts']);
@@ -121,11 +130,11 @@ gulp.task('serve', () => {
 });
 
 gulp.task('build', ['images', 'fonts'], () => {
-  return gulp.src('assets/**/*').pipe(size({title: 'build', gzip: true}));
+  return gulp.src(['assets/**/*', '**/*.html']).pipe(size({title: 'build', gzip: true}));
 });
 
 gulp.task('default', () => {
   return new Promise(resolve => {
-    runSequence(['clean', 'wiredep'], ['sass', 'js'], 'html', ['inlineSource'], 'build', resolve);
+    runSequence(['clean', 'wiredep'], ['sass', 'js'], ['html'], ['inlineSource'], ['build'], ['copy'], ['delete'], resolve);
   });
 });
