@@ -9,7 +9,7 @@
   "dependencies": {
     "lazysizes": "^3.0.0",
     "fontfaceobserver": "^2.0.13",
-    "fluffy.js": "&2.1.1",
+    "fluffy.js": "^2.1.1",
     "html5shiv": "^3.7.3"
   }
 }
