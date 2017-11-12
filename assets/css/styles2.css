@@ -327,6 +327,7 @@ p {
 }
 
 [data-fluffy-container] {
+  background-color: rgba(255, 255, 255, 0.1);
   position: relative;
   -webkit-transition: background-color 1s 600ms, opacity 600ms 600ms;
   transition: background-color 1s 600ms, opacity 600ms 600ms;
@@ -393,6 +394,10 @@ p {
   }
 }
 
+[data-fluffy-container].is-ready {
+  background-color: transparent;
+}
+
 [data-fluffy-container].is-ready::after, [data-fluffy-container].is-ready::before {
   opacity: 0;
   -webkit-transition: opacity 300ms, visibility 0s 300ms;
@@ -413,15 +418,15 @@ p {
 
 [data-fluffy-scrollbars] .is-horizontal,
 [data-fluffy-scrollbars] .is-vertical {
-  background-color: rgba(0, 0, 0, 0.5);
-  -webkit-box-shadow: inset 0 0 20px 20px rgba(255, 255, 255, 0.5);
-          box-shadow: inset 0 0 20px 20px rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0.66);
+  -webkit-box-shadow: inset 0 0 20px 20px rgba(255, 255, 255, 0.66);
+          box-shadow: inset 0 0 20px 20px rgba(255, 255, 255, 0.66);
   position: absolute;
-  bottom: 0;
+  top: 0;
 }
 
 [data-fluffy-scrollbars] .is-horizontal {
-  height: 4px;
+  height: 3px;
   left: 0;
   width: 40px;
 }
@@ -434,6 +439,10 @@ p {
 
 [data-fluffy-content] {
   height: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
   -webkit-transition: opacity 600ms 600ms;
   transition: opacity 600ms 600ms;
 }
