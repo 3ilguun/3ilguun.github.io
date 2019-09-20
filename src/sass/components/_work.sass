@@ -1,0 +1,38 @@
+//- Work
+.works
+  margin-top: $size-2
+
+.work + .work
+  margin-top: $size-3
+
+.work__header
+  margin-top: $size-1
+
+.work__title
+  font-size: 2rem
+  line-height: 1
+  margin-bottom: 0
+
+.work__type
+  color: $color-gray
+  font-size: $paragraph-size
+  margin-top: 1rem
+
+.work__img
+  img
+    display: block
+
+
+//- Small phones
++media(xs)
+  .work__type
+    font-size: $paragraph-xs-size
+
+
+//- Tablet and Up
++media(md)
+  .works
+    margin-top: $size-5
+
+  .work__title
+    font-size: 3rem

@@ -1,0 +1,51 @@
+@import modules/mixins
+@import modules/variables
+@import modules/typography
+
+
+html
+  font-size: $base-font-size
+  line-height: $base-line-height
+  box-sizing: border-box
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  -webkit-text-size-adjust: 100%
+  -ms-text-size-adjust: 100%
+
+body
+  margin: 0
+  color: $color-black
+  font-family: $font-family, $base-font-family
+  font-weight: $base-font-weight
+  text-rendering: optimizeLegibility
+  background-color: $color-grey
+
+img
+  border-style: none
+  max-width: 100%
+
+svg:not(:root)
+  overflow: hidden
+
+main
+  display: block // For IE11
+
+.wrapper
+  padding:
+    left: 1rem
+    right: 1rem
+
+  +media(md)
+    padding:
+      left: $size-1
+      right: $size-1
+
+  +media(lg)
+    padding:
+      left: 10%
+      right: 10%
+
+
+@import components/intro
+@import components/work
+@import components/footer

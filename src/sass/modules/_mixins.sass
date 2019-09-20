@@ -1,0 +1,24 @@
+//- Breakpoint
+=media($class)
+  @if $class == xs
+    @media (max-width: 22.49em)
+      @content
+
+  @else if $class == sm
+    @media (max-width: 47.99em)
+      @content
+
+  @else if $class == md
+    @media (min-width: 48em)
+      @content
+
+  @else if $class == lg
+    @media (min-width: 80em)
+      @content
+
+  @else
+    @warn "Undefined class"
+
+//- PX to REM
+@function rem($px, $base: $base-font-size)
+  @return ($px / $base) * 1rem

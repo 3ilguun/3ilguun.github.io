@@ -1,0 +1,67 @@
+//- Intro
+.intro
+  padding-top: 2rem
+
+.intro__title
+  color: $color-black
+  font-size: $header-size
+  line-height: $header-line-height
+  text-transform: uppercase
+  margin-bottom: $header-margin
+
+.intro__content
+  font-size: $paragraph-size
+  line-height: $paragraph-line-height
+
+.intro__links
+  margin:
+    top: 0
+    bottom: 0
+  padding-left: 0
+  list-style: none
+
+  li
+    display: inline-block
+    margin-right: .25rem
+
+    &:not(:last-child)
+      a::after
+        content: ','
+        color: $color-gray
+
+    &:last-child
+      margin-right: 0
+
+      a::after
+        display: none
+
+
+//- Small phones
++media(xs)
+  .intro__title
+    font-size: 3rem
+    line-height: 3.5rem
+
+  .intro__content
+    font-size: $paragraph-xs-size
+    line-height: $paragraph-xs-line-height
+
+    br
+      display: none
+
+
+//- Table and Up
++media(md)
+  .intro
+    padding-top: $size-2
+
+  .intro__title
+    font-size: $header-md-size
+    line-height: $header-md-line-height
+    margin-bottom: $size-1
+
+
+//- Desktop
++media(lg)
+  .intro
+    padding-top: $size-3

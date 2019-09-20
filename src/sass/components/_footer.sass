@@ -1,0 +1,47 @@
+//- Footer
+.footer
+  font-size: $paragraph-size
+  margin-top: $size-4
+  padding-bottom: $size-1 / 2
+  text-align: center
+
+.contact__icon
+  width: 12rem
+  height: 12rem
+
+.footer__scroll-top
+  margin-top: $size-3
+
+.footer__copyright
+  opacity: .5
+  color: $color-gray
+  margin-top: $size-1
+
+
+//- Small phones
++media(xs)
+  .footer
+    font-size: $paragraph-xs-size
+
+
+//- Table and Up
++media(md)
+  .footer
+    margin-top: $size-5
+    padding-bottom: $size-3
+    text-align: initial
+
+  .contact
+    right: 1rem
+    bottom: 1rem
+    z-index: 999
+    position: fixed
+
+  .footer__scroll-top,
+  .footer__copyright
+    display: inline-block
+    width: 50%
+    margin-top: 0
+
+  .footer__copyright
+    text-align: right
