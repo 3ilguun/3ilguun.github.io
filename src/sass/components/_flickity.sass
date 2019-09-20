@@ -1,0 +1,27 @@
+//- Flickity
+.flickity-enabled
+  position: relative
+
+  &:focus
+    outline: none
+
+  &.is-draggable
+    user-select: none
+    -webkit-tap-highlight-color: transparent
+
+    .flickity-viewport
+      cursor: move
+      cursor: grab
+
+      &.is-pointer-down
+        cursor: grabbing
+
+.flickity-viewport
+  // overflow: hidden
+  position: relative
+  height: 100%
+
+.flickity-slider
+  position: absolute
+  width: 100%
+  height: 100%

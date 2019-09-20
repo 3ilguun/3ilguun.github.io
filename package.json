@@ -23,5 +23,8 @@
     "plugins": {
       "autoprefixer": {}
     }
+  },
+  "dependencies": {
+    "flickity": "^2.2.1"
   }
 }
