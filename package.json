@@ -4,8 +4,22 @@
   "repository": "https://github.com/3ilguun/3ilguun.github.io.git",
   "author": "3ilguun <hi@bilguun.design>",
   "private": true,
+  "scripts": {
+    "dev": "parcel src/view/index.pug",
+    "build": "yarn clear && parcel build src/view/index.pug --no-content-hash --no-source-maps",
+    "clear": "rimraf .cache && rimraf dist"
+  },
   "devDependencies": {
+    "autoprefixer": "^9.6.1",
     "parcel-bundler": "^1.12.3",
+    "pug": "^2.0.4",
+    "rimraf": "^3.0.0",
     "sass": "^1.22.12"
+  },
+  "postcss": {
+    "modules": false,
+    "plugins": {
+      "autoprefixer": {}
+    }
   }
 }
