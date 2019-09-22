@@ -2,12 +2,15 @@
 
 import Flickity from 'flickity';
 
-console.log('Hello world!');
-
-var galleryElems = document.querySelectorAll('.work__img');
-for (var i=0, len = galleryElems.length; i < len; i++) {
-  var galleryElem = galleryElems[i];
-  new Flickity( galleryElem, {
-    pageDots: false
-  })
-}
+document.addEventListener("DOMContentLoaded", () => {
+  const galleryElems = document.querySelectorAll('.work__images');
+  for(const galleryElem of galleryElems) {
+    new Flickity(galleryElem, {
+      pageDots: false,
+      wrapAround: true,
+      lazyLoad: true,
+      selectedAttraction: 0.2,
+      friction: 1
+    });
+  }
+});

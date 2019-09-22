@@ -1,6 +1,5 @@
 //- Footer
 .footer
-  display: flex
   font-size: $paragraph-size
   margin-top: $size-4
   padding-bottom: $size-1 / 2
@@ -32,11 +31,30 @@
     padding-bottom: $size-3
     text-align: initial
 
+  @keyframes rotation
+    from
+      transform: rotate(0deg)
+    to
+      transform: rotate(1turn)
+
   .contact
     right: 1rem
     bottom: 1rem
     z-index: 999
     position: fixed
+    transform-origin: 50% 50%
+    animation: rotation 24s linear infinite
+    backface-visibility: hidden
+
+    &:hover .contact__icon
+      transform: scale(.9)
+
+    &:active .contact__icon
+      transform: scale(.8)
+
+  .contact__icon
+    transition: transform .2s ease-in-out
+    will-change: transform
 
   .footer__scroll-top,
   .footer__copyright

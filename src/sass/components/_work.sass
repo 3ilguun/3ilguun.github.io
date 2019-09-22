@@ -18,9 +18,20 @@
   font-size: $paragraph-size
   margin-top: 1rem
 
-.work__img
+.work__images
   img
-    display: block
+    transition: opacity .5s ease-in-out
+    opacity: 0
+
+    &.flickity-lazyerror,
+    &.flickity-lazyloaded
+      opacity: 1
+
+.work__image
+  width: 100%
+
+  img
+    width: 100%
 
 
 //- Small phones
@@ -29,10 +40,17 @@
     font-size: $paragraph-xs-size
 
 
-//- Tablet and Up
+//- Desktop
 +media(md)
   .works
     margin-top: $size-5
 
   .work__title
     font-size: 3rem
+
+  .work__image img
+    max-width: 100%
+
+  .prev,
+  .next
+    cursor: pointer

@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "dev": "parcel src/view/index.pug",
-    "build": "yarn clear && parcel build src/view/index.pug --no-content-hash --no-source-maps",
+    "build": "yarn clear && parcel build src/view/index.pug --public-url ./ --no-content-hash --no-source-maps",
     "clear": "rimraf .cache && rimraf dist"
   },
   "devDependencies": {
@@ -14,6 +14,7 @@
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
     "parcel-bundler": "^1.12.3",
+    "parcel-plugin-flickity-lazyload": "https://github.com/3ilguun/parcel-plugin-flickity-lazyload.git",
     "pug": "^2.0.4",
     "rimraf": "^3.0.0",
     "sass": "^1.22.12"

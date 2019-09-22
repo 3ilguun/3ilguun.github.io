@@ -5,19 +5,19 @@
   &:focus
     outline: none
 
-  &.is-draggable
-    user-select: none
-    -webkit-tap-highlight-color: transparent
-
-    .flickity-viewport
-      cursor: move
-      cursor: grab
-
-      &.is-pointer-down
-        cursor: grabbing
+.is-draggable
+  user-select: none
+  -webkit-tap-highlight-color: transparent
 
 .flickity-viewport
-  // overflow: hidden
+  cursor: move
+  cursor: grab
+
+  &.is-pointer-down
+    cursor: grabbing
+
+.flickity-viewport
+  overflow: hidden
   position: relative
   height: 100%
 
@@ -25,3 +25,43 @@
   position: absolute
   width: 100%
   height: 100%
+
+.flickity-button
+  display: none
+
+
+//- Tablet and Up
++media(lg)
+  .flickity-button
+    top: 50%
+    border: 0
+    cursor: pointer
+    display: block
+    padding: $size-4 $size-1
+    background-color: transparent
+    position: absolute
+    transform: translateY(-50%)
+
+    &:focus
+      outline: none
+
+    &:active .flickity-button-icon
+      transform: scale(.75)
+
+  .previous
+    left: -12rem
+
+  .next
+    right: -12rem
+
+  .flickity-button-icon
+    opacity: 0
+    fill: $color-black
+    height: $size-1
+    width: auto
+    transition: opacity .25s ease-in-out, transform .1s ease-in-out
+    will-change: opacity, transform
+
+  .flickity-enabled:hover
+    .flickity-button-icon
+      opacity: .1

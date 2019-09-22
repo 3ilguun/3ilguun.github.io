@@ -1,8 +1,19 @@
 mixin work(title, subTitle, imgCount, href)
   .work
-    .work__img
-      img(src="../images/big.jpg", alt="")
-      img(src="../images/big.jpg", alt="")
+    if imgCount > 1
+      .work__images
+        - for (var x = 1; x < imgCount; x++)
+          - var URL = '../images/' + title + '/' + title + '-' + x + '.jpg'
+          - var URLsm = '../images/' + title + '/' + title + '-' + x + '-sm.jpg'
+          .work__image
+            img(
+              data-flickity-lazyload-src=URL
+              data-flickity-lazyload-srcset=URL + ' 2000w,' + URLsm + ' 760w'
+            )
+    else
+      .work__image
+        - var URL = '../images/' + title + '/' + title + '.jpg'
+        img(src=URL)
     .work__header
       h3.work__title= title
       p.work__type= subTitle
