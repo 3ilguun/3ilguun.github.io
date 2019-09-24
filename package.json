@@ -15,7 +15,7 @@
     "babel-preset-env": "^1.7.0",
     "parcel-bundler": "^1.12.3",
     "parcel-plugin-flickity-lazyload": "https://github.com/3ilguun/parcel-plugin-flickity-lazyload.git",
-    "parcel-plugin-imagemin": "^3.0.0",
+    "parcel-plugin-inliner": "^1.0.10",
     "pug": "^2.0.4",
     "rimraf": "^3.0.0",
     "sass": "^1.22.12"
