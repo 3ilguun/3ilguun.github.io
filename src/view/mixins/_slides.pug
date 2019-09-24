@@ -4,4 +4,4 @@ mixin slides(title, imgCount)
       - var URL = '../images/' + title + '/' + title + '-' + x + '.jpg'
       - var URLsm = '../images/' + title + '/' + title + '-' + x + '-sm.jpg'
       .work__slide
-        img( src=URL )
+        img( data-flickity-lazyload-src=URL )

@@ -14,13 +14,12 @@ document.addEventListener("DOMContentLoaded", () => {
       friction: 1
     });
   }
-  console.log(sliderElem);
   if (typeof(sliderElem) != 'undefined' && sliderElem != null) {
     new Flickity(sliderElem, {
       cellAlign: 'left',
       pageDots: false,
       contain: true,
-      lazyLoad: 2
+      lazyLoad: 4
     });
   }
 });
