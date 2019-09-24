@@ -45,8 +45,14 @@
     &:focus
       outline: none
 
-    &:active .flickity-button-icon
-      transform: scale(.75)
+    &:disabled
+      opacity: 0
+      visibility: hidden
+
+    &:active,
+    &:focus
+      .flickity-button-icon
+        transform: scale(.75)
 
   .previous
     left: -12rem

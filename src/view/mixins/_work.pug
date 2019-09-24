@@ -13,7 +13,12 @@ mixin work(title, subTitle, imgCount, href)
     else
       .work__image
         - var URL = '../images/' + title + '/' + title + '.jpg'
-        img(src=URL)
+        - var URLsm = '../images/' + title + '/' + title + '-sm.jpg'
+        img(
+          src=URL
+          srcset=URL + ' 2000w,' + URLsm + ' 760w'
+        )
+      block
     .work__header
       h3.work__title= title
       p.work__type= subTitle
