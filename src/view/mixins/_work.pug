@@ -6,19 +6,19 @@ mixin work(title, subTitle, imgCount, href)
           - var URL = '../images/' + title + '/' + title + '-' + x + '.jpg'
           - var URLsm = '../images/' + title + '/' + title + '-' + x + '-sm.jpg'
           .work__image
-            img(
+            //- img(
               data-flickity-lazyload-src=URL
               data-flickity-lazyload-srcset=URL + ' 2000w,' + URLsm + ' 760w'
-            )
+            //- )
     else
       .work__image
         - var URL = '../images/' + title + '/' + title + '.jpg'
         - var URLsm = '../images/' + title + '/' + title + '-sm.jpg'
-        img(
+        //- img(
           src=URL
           srcset=URL + ' 2000w,' + URLsm + ' 760w'
-        )
+        //- )
       block
     .work__header
-      h3.work__title= title
+      h2.work__title= title
       p.work__type= subTitle

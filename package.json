@@ -27,6 +27,6 @@
     }
   },
   "dependencies": {
-    "flickity": "^2.2.1"
+    "gsap": "^2.1.3"
   }
 }

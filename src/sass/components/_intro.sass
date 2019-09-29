@@ -6,19 +6,22 @@
   color: $color-black
   font-size: $header-size
   line-height: $header-line-height
-  text-transform: uppercase
   margin-bottom: $header-margin
+  margin-left: -.25rem
 
 .intro__content
   font-size: $paragraph-size
   line-height: $paragraph-line-height
+
+  br
+    display: none
 
 .intro__links
   margin:
     top: 0
     bottom: 0
   padding-left: 0
-  list-style: none
+  list-style-type: none
 
   li
     display: inline-block
@@ -36,40 +39,28 @@
         display: none
 
 
-//- Small phones
 +media(xs)
-  .intro__title
-    font-size: 3rem
-    line-height: 3.5rem
-
-  .intro__content
-    font-size: $paragraph-xs-size
-    line-height: $paragraph-xs-line-height
-
-    br
-      display: none
+  .intro__content br
+    display: block
 
 
-//- Table and Up
 +media(md)
   .intro
-    padding-top: $size-2
+    padding-top: $size-1
 
   .intro__title
     font-size: $header-md-size
     line-height: $header-md-line-height
     margin-bottom: $size-1
 
+  .intro__content
+    font-size: $paragraph-md-size
+    line-height: $paragraph-md-line-height
 
-//- Desktop
+
 +media(lg)
   .intro
-    padding-top: $size-3 - $size-1
-
-  .intro__content
-    font-size: $paragraph-lg-size
-    line-height: $paragraph-lg-line-height
-
-  .intro__title
-    font-size: $header-lg-size
-    line-height: $header-lg-line-height
+    padding:
+      right: $size-2
+      left: $size-2
+      top: $size-3 - $size-1

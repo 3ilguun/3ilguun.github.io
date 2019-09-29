@@ -1,7 +1,7 @@
 //- Breakpoint
 =media($class)
   @if $class == xs
-    @media (max-width: 22.49em)
+    @media (min-width: 24.99em)
       @content
 
   @else if $class == sm
@@ -17,7 +17,7 @@
       @content
 
   @else
-    @warn "Undefined class"
+    @warn "Breakpoint error"
 
 //- PX to REM
 @function rem($px, $base: $base-font-size)

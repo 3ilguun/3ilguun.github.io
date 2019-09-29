@@ -1,46 +1,61 @@
 //- Footer
 .footer
   font-size: $paragraph-size
-  margin-top: $size-4
-  padding-bottom: $size-1 / 2
+  padding-bottom: $size-1
   text-align: center
+  margin-top: $size-5
 
 .contact__icon
   width: 12rem
   height: 12rem
 
 .footer__scroll-top
-  margin-top: $size-3
+  margin-top: $size-2
 
 .footer__copyright
   opacity: .5
   color: $color-gray
-  margin-top: $size-1
+  margin-top: $size-2
 
 
-//- Small phones
-+media(xs)
-  .footer
-    font-size: $paragraph-xs-size
-
-
-//- Table and Up
 +media(md)
   .footer
-    margin-top: $size-5
+    font-size: $paragraph-md-size
+    line-height: $paragraph-md-line-height
+
+  .footer__scroll-top
+    margin-top: $size-3
+
+  .footer__copyright
+    margin-top: $size-1
+
+
++media(lg)
+  .footer
+    display: flex
+    flex: 0 1 auto
+    flex-wrap: wrap
     padding-bottom: $size-3
-    text-align: initial
+
+  .footer__scroll-top,
+  .footer__copyright
+    margin-top: 0
+
+  .footer__scroll-top
+    flex-grow: 1
+    text-align: left
 
   @keyframes rotation
     from
       transform: rotate(0deg)
+    
     to
       transform: rotate(1turn)
 
   .contact
     right: 1rem
     bottom: 1rem
-    z-index: 999
+    z-index: 100
     position: fixed
     transform-origin: 50% 50%
     animation: rotation 24s linear infinite
@@ -49,18 +64,11 @@
     &:hover .contact__icon
       transform: scale(.9)
 
-    &:active .contact__icon
-      transform: scale(.8)
+    &:active,
+    &:focus
+      .contact__icon
+        transform: scale(.8)
 
   .contact__icon
     transition: transform .2s ease-in-out
     will-change: transform
-
-  .footer__scroll-top,
-  .footer__copyright
-    display: inline-block
-    width: 50%
-    margin-top: 0
-
-  .footer__copyright
-    text-align: right

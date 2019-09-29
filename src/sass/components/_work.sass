@@ -1,80 +1,55 @@
 //- Work
 .works
-  margin-top: $size-2
+  margin-top: $size-5
 
 .work + .work
-  margin-top: $size-3
+  margin-top: $size-4
 
 .work__header
   margin-top: $size-1
 
 .work__title
-  font-size: 2rem
+  font-size: 3rem
   line-height: 1
   margin-bottom: 0
+  margin-left: -.125rem
 
 .work__type
   color: $color-gray
   font-size: $paragraph-size
+  line-height: $paragraph-line-height
   margin-top: 1rem
 
-.work__images
-  img
-    transition: opacity .5s ease-in-out
-    opacity: 0
 
-    &.flickity-lazyerror,
-    &.flickity-lazyloaded
-      opacity: 1
-
-.work__image
-  width: 100%
-
-  img
-    width: 100%
-
-.work__slides
-  margin-top: $size-1
-
-.work__slide
-  width: 80%
-  margin-right: $size-1 / 2
-
-  img
-    width: 100%
-
-
-//- Small phones
-+media(xs)
-  .work__type
-    font-size: $paragraph-xs-size
-
-
-//- Desktop
 +media(md)
   .works
+    margin-top: $size-5 + $size-1
+
+  .work + .work
     margin-top: $size-5
 
-  .work__title
-    font-size: 3rem
-
-  .work__image img
-    max-width: 100%
-
-  .work__slide
-    width: 20%
-
-    img
-      max-width: 100%
-
-  .prev,
-  .next
-    cursor: pointer
-
-
-+media(lg)
-  .work__title
-    font-size: 4rem
-
   .work__type
-    font-size: $paragraph-lg-size
+    font-size: $paragraph-md-size
+    line-height: $paragraph-md-line-height
+
+
+// //- Desktop
+// +media(md)
+//   .works
+//     margin-top: $size-5
+
+//   .work__title
+//     font-size: 3rem
+
+//   .work__image img
+//     max-width: 100%
+
+//   .work__slide
+//     width: 20%
+
+//     img
+//       max-width: 100%
+
+//   .prev,
+//   .next
+//     cursor: pointer
