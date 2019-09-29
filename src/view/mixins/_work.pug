@@ -1,15 +1,31 @@
-mixin work(title, subTitle, imgCount, href)
+mixin work(title, subTitle, fileName, imgCount, href)
   .work
+    .work__header
+      .work__header--group
+        span Project name
+        p= title
+      .work__header--group
+        span Project type
+        p= subTitle
+      if href
+        .work__header--group
+          span Project URL
+          p
+            a.work__link(href=href target="_blank")= href
+              include ../../images/link.svg
+      //- h2.work__title= title
+      //- p.work__type= subTitle
+
     if imgCount > 1
       .work__images
         - for (var x = 1; x < imgCount; x++)
-          - var URL = '../images/' + title + '/' + title + '-' + x + '.jpg'
-          - var URLsm = '../images/' + title + '/' + title + '-' + x + '-sm.jpg'
+          - var URL = '../images/' + fileName + '/' + fileName + '-' + x + '.jpg'
+          - var URLsm = '../images/' + fileName + '/' + fileName + '-' + x + '-sm.jpg'
           .work__image
-            //- img(
-              data-flickity-lazyload-src=URL
-              data-flickity-lazyload-srcset=URL + ' 2000w,' + URLsm + ' 760w'
-            //- )
+            img(
+              src=URL
+              srcset=URL + ' 2000w,' + URLsm + ' 760w'
+            )
     else
       .work__image
         - var URL = '../images/' + title + '/' + title + '.jpg'
@@ -19,6 +35,3 @@ mixin work(title, subTitle, imgCount, href)
           srcset=URL + ' 2000w,' + URLsm + ' 760w'
         //- )
       block
-    .work__header
-      h2.work__title= title
-      p.work__type= subTitle

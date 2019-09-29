@@ -6,50 +6,78 @@
   margin-top: $size-4
 
 .work__header
-  margin-top: $size-1
+  margin-bottom: $size-1
 
-.work__title
-  font-size: 3rem
-  line-height: 1
-  margin-bottom: 0
-  margin-left: -.125rem
+.work__header--group
+  & + .work__header--group
+    margin-top: 1rem
 
-.work__type
-  color: $color-gray
-  font-size: $paragraph-size
-  line-height: $paragraph-line-height
-  margin-top: 1rem
+  span
+    font-size: .75rem
+    color: $color-gray
+    letter-spacing: .075em
+    text-transform: uppercase
+
+  p
+    font-size: $paragraph-size
+    margin-top: 0
+
+.work__link-icon
+  fill: $color-gray
+  display: inline-block
+  margin-left: .125rem
+  width: 1rem
+
+// .work__title
+//   font-size: 3rem
+//   line-height: 1
+//   margin-bottom: 0
+//   margin-left: -.125rem
+
+// .work__type
+//   color: $color-gray
+//   font-size: $paragraph-size
+//   line-height: $paragraph-line-height
+//   margin-top: 1rem
+
+.work__images
+  .work__image + .work__image
+    margin-top: $size-1
+
+.work__image
+  img
+    display: block
+    width: 100%
 
 
 +media(md)
   .works
-    margin-top: $size-5 + $size-1
+    margin-top: $size-6
 
   .work + .work
     margin-top: $size-5
 
-  .work__type
-    font-size: $paragraph-md-size
-    line-height: $paragraph-md-line-height
+  .work__header
+    display: flex
+    flex: 0 1 auto
+    flex-wrap: wrap
 
+  .work__header--group
+    &:nth-child(2)
+      flex-grow: 1
+      margin-left: $size-2
 
-// //- Desktop
-// +media(md)
-//   .works
-//     margin-top: $size-5
+    & + .work__header--group
+      margin:
+        top: 0
 
-//   .work__title
-//     font-size: 3rem
+    p
+      font-size: $paragraph-md-size
+      line-height: $paragraph-md-line-height
 
-//   .work__image img
-//     max-width: 100%
+    a:hover svg
+      fill: $color-black
 
-//   .work__slide
-//     width: 20%
-
-//     img
-//       max-width: 100%
-
-//   .prev,
-//   .next
-//     cursor: pointer
+  .work__link-icon
+    width: 1.25rem
+    transition: color .1s ease-in-out
