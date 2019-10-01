@@ -1,5 +1,33 @@
 mixin work(title, subTitle, fileName, imgCount, href)
   .work
+    - let baseURL = '../images/' + fileName + '/' + fileName
+
+    if imgCount > 1
+      .work__images
+        - for (let x = 1; x < imgCount; x++)
+          - let URL = baseURL + '-' + x + '.jpg'
+          - let URLxs = baseURL + '-' + x + '-xs.jpg'
+          - let URLmd = baseURL + '-' + x + '-md.jpg'
+          - let URLsm = baseURL + '-' + x + '-sm.jpg'
+          .work__image
+            img.lazy(
+              src= URLxs
+              data-src= URL
+              data-srcset= URL + ' 2000w,' + URLmd + ' 1260w,' + URLsm + ' 760w'
+            )
+    else if imgCount == 1
+      .work__image
+        - let URL = baseURL + '.jpg'
+        - let URLxs = baseURL + '-xs.jpg'
+        - let URLmd = baseURL + '-md.jpg'
+        - let URLsm = baseURL + '-sm.jpg'
+        img.lazy(
+          data-src= URL
+          data-srcset= URL + ' 2000w,' + URLmd + ' 1260w,' + URLsm + ' 760w'
+        )
+
+    block
+
     .work__header
       .work__header--group
         span Project name
@@ -13,25 +41,18 @@ mixin work(title, subTitle, fileName, imgCount, href)
           p
             a.work__link(href=href target="_blank")= href
               include ../../images/link.svg
-      //- h2.work__title= title
-      //- p.work__type= subTitle
 
-    if imgCount > 1
-      .work__images
-        - for (var x = 1; x < imgCount; x++)
-          - var URL = '../images/' + fileName + '/' + fileName + '-' + x + '.jpg'
-          - var URLsm = '../images/' + fileName + '/' + fileName + '-' + x + '-sm.jpg'
-          .work__image
-            img(
-              src=URL
-              srcset=URL + ' 2000w,' + URLsm + ' 760w'
-            )
-    else
+
+mixin work-grid(fileName, imgCount)
+  .work__images-grid
+    - for (let x = 1; x < imgCount; x++)
+      - let baseURL = '../images/' + fileName + '/' + fileName + '-' + x
+      - let URL = baseURL + '.jpg'
+      - let URLxs = baseURL + '-xs.jpg'
+      - let URLmd = baseURL + '-md.jpg'
+      - let URLsm = baseURL + '-sm.jpg'
       .work__image
-        - var URL = '../images/' + title + '/' + title + '.jpg'
-        - var URLsm = '../images/' + title + '/' + title + '-sm.jpg'
-        //- img(
-          src=URL
-          srcset=URL + ' 2000w,' + URLsm + ' 760w'
-        //- )
-      block
+        img.lazy(
+          data-src= URL
+          data-srcset= URL + ' 2000w,' + URLmd + ' 1260w,' + URLsm + ' 760w'
+        )

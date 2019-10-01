@@ -6,11 +6,11 @@
   margin-top: $size-4
 
 .work__header
-  margin-bottom: $size-1
+  margin-top: $size-1
 
 .work__header--group
   & + .work__header--group
-    margin-top: 1rem
+    margin-top: $size-1 / 2
 
   span
     font-size: .75rem
@@ -27,27 +27,39 @@
   display: inline-block
   margin-left: .125rem
   width: 1rem
-
-// .work__title
-//   font-size: 3rem
-//   line-height: 1
-//   margin-bottom: 0
-//   margin-left: -.125rem
-
-// .work__type
-//   color: $color-gray
-//   font-size: $paragraph-size
-//   line-height: $paragraph-line-height
-//   margin-top: 1rem
+  height: 1rem
 
 .work__images
   .work__image + .work__image
-    margin-top: $size-1
+    margin-top: $size-1 / 2
 
 .work__image
+  overflow: hidden
+  position: relative
+
+  &::before
+    left: 0
+    right: 0
+    bottom: 0
+    content: ''
+    height: 100%
+    display: block
+    background-color: $color-black
+    position: absolute
+    z-index: 1
+    transition: height .5s ease-in-out
+    transition-delay: .25s
+
+  &.reveal::before
+    height: 0
+
   img
     display: block
     width: 100%
+
+.work__images-grid
+  .work__image
+    margin-top: $size-1 / 2
 
 
 +media(md)
@@ -56,6 +68,22 @@
 
   .work + .work
     margin-top: $size-5
+
+  .work__images-grid
+    display: flex
+    flex-wrap: wrap
+    margin:
+      left: - $size-1 / 4
+      right: - $size-1 / 4
+
+    .work__image
+      flex-basis: 50%
+      width: 50%
+      margin-top: $size-1 / 2
+      box-sizing: border-box
+      padding:
+        left: $size-1 / 4
+        right: $size-1 / 4
 
   .work__header
     display: flex

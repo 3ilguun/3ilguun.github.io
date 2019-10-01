@@ -20,6 +20,17 @@ body
   text-rendering: optimizeLegibility
   background-color: $color-grey
 
+  &::before
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    content: ''
+    position: absolute
+    background-size: 100%
+    background: radial-gradient(ellipse at top right, #f5f2d3 25%, $color-grey 75%)
+    z-index: -1
+
 img
   border-style: none
   max-width: 100%

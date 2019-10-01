@@ -1,6 +1,13 @@
 'use strict';
 
-// import Flickity from 'flickity';
+import LazyLoad from 'vanilla-lazyload';
+
+const lazyLoad = new LazyLoad({
+  load_delay: 300,
+  callback_reveal: (el) => {
+    el.parentNode.classList.add('reveal');
+  }
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   // const galleryElems = document.querySelectorAll('.work__images');
