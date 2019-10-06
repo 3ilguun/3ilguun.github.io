@@ -6,11 +6,11 @@
   margin-top: $size-4
 
 .work__header
-  margin-top: $size-1
+  margin-top: $size-1 / 2
 
 .work__header--group
   & + .work__header--group
-    margin-top: $size-1 / 2
+    margin-top: 1rem
 
   span
     font-size: .75rem
@@ -33,29 +33,28 @@
   .work__image + .work__image
     margin-top: $size-1 / 2
 
-.work__image
+.work__image img
+  display: block
+  width: 100%
+
+.lazyload .work__image
   overflow: hidden
   position: relative
 
   &::before
+    top: 0
     left: 0
     right: 0
-    bottom: 0
     content: ''
     height: 100%
     display: block
     background-color: $color-black
     position: absolute
+    transition: height .75s cubic-bezier(1, 0, 1, 1)
     z-index: 1
-    transition: height .5s ease-in-out
-    transition-delay: .25s
 
   &.reveal::before
     height: 0
-
-  img
-    display: block
-    width: 100%
 
 .work__images-grid
   .work__image
@@ -85,6 +84,10 @@
         left: $size-1 / 4
         right: $size-1 / 4
 
+      &::before
+        left: $size-1 / 4
+        right: $size-1 / 4
+
   .work__header
     display: flex
     flex: 0 1 auto
@@ -93,7 +96,7 @@
   .work__header--group
     &:nth-child(2)
       flex-grow: 1
-      margin-left: $size-2
+      margin-left: $size-1 / 2
 
     & + .work__header--group
       margin:
@@ -109,3 +112,16 @@
   .work__link-icon
     width: 1.25rem
     transition: color .1s ease-in-out
+
+
++media(lg)
+  .work + .work
+    margin-top: $size-6
+
+  .work__header--group
+    &:nth-child(2)
+      margin-left: $size-2
+
+  .work__images .work__image + .work__image,
+  .work__images-grid .work__image
+    margin-top: $size-1

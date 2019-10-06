@@ -1,16 +1,17 @@
 //- Footer
 .footer
   font-size: $paragraph-size
-  padding-bottom: $size-1
+  padding-bottom: $size-2
   text-align: center
-  margin-top: $size-5
+  margin-top: $size-4
+
+.contact
+  text-align: center
+  padding-bottom: $size-2
 
 .contact__icon
   width: 12rem
   height: 12rem
-
-.footer__scroll-top
-  margin-top: $size-2
 
 .footer__copyright
   opacity: .5
@@ -22,28 +23,20 @@
   .footer
     font-size: $paragraph-md-size
     line-height: $paragraph-md-line-height
+    text-align: left
+    margin-top: $size-6
+    padding-bottom: $size-1
 
-  .footer__scroll-top
-    margin-top: $size-3
-
-  .footer__copyright
-    margin-top: $size-1
-
-
-+media(lg)
-  .footer
-    display: flex
-    flex: 0 1 auto
-    flex-wrap: wrap
-    padding-bottom: $size-3
-
-  .footer__scroll-top,
   .footer__copyright
     margin-top: 0
 
-  .footer__scroll-top
-    flex-grow: 1
-    text-align: left
+  @keyframes zoom
+    from
+      opacity: 0
+      transform: scale3d(.5, .5, .5)
+
+    50%
+      opacity: 1
 
   @keyframes rotation
     from
@@ -55,11 +48,15 @@
   .contact
     right: 1rem
     bottom: 1rem
-    z-index: 100
+    width: 12rem
+    height: 12rem
+    padding-bottom: 0
     position: fixed
+    z-index: 100
     transform-origin: 50% 50%
     animation: rotation 24s linear infinite
     backface-visibility: hidden
+    will-change: transform
 
     &:hover .contact__icon
       transform: scale(.9)
@@ -69,6 +66,12 @@
       .contact__icon
         transform: scale(.8)
 
+    a
+      display: block
+      animation-name: zoom
+      animation-duration: .75s
+      animation-fill-mode: both
+
   .contact__icon
-    transition: transform .2s ease-in-out
+    transition: transform .25s ease-in-out
     will-change: transform

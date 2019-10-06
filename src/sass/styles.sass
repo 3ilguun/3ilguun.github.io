@@ -1,6 +1,7 @@
 @import modules/mixins
 @import modules/variables
 @import modules/typography
+@import modules/fonts
 
 
 html
@@ -31,6 +32,20 @@ body
     background: radial-gradient(ellipse at top right, #f5f2d3 25%, $color-grey 75%)
     z-index: -1
 
+  &.loaded::before
+    animation: background 12s ease-in-out infinite
+
+  &.smooth-scroll
+    overflow: -moz-scrollbars-none
+    scrollbar-width: none
+    -ms-overflow-style: none
+
+    &::-webkit-scrollbar
+      display: none
+
+  +media(md)
+    overflow-x: hidden
+
 img
   border-style: none
   max-width: 100%
@@ -58,6 +73,41 @@ main
     padding:
       left: $size-2
       right: $size-2
+
+.smooth-scroll
+  .container
+    will-change: transform
+
+  .wrapper
+    top: 0
+    left: 0
+    right: 0
+    height: 100%
+    overflow: hidden
+    position: fixed
+
+  .scroll-bar
+    top: 0
+    right: 0
+    width: .5rem
+    height: 100%
+    background-color: $color-black
+    position: absolute
+    will-change: transform
+    transform: scaleY(0)
+    transform-origin: 0 0
+
+// Hide Firefox image loader
+@-moz-document url-prefix()
+  img:moz-loading
+    visibility: hidden
+
+@keyframes background
+  from
+    filter: hue-rotate(0deg)
+
+  to
+    filter: hue-rotate(360deg)
 
 
 @import components/intro

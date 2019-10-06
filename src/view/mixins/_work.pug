@@ -13,7 +13,7 @@ mixin work(title, subTitle, fileName, imgCount, href)
             img.lazy(
               src= URLxs
               data-src= URL
-              data-srcset= URL + ' 2000w,' + URLmd + ' 1260w,' + URLsm + ' 760w'
+              data-srcset= URL + ' 2000w,' + URLmd + ' 1260w,' + URLsm + ' 720w'
             )
     else if imgCount == 1
       .work__image
@@ -22,8 +22,9 @@ mixin work(title, subTitle, fileName, imgCount, href)
         - let URLmd = baseURL + '-md.jpg'
         - let URLsm = baseURL + '-sm.jpg'
         img.lazy(
+          src= URLxs
           data-src= URL
-          data-srcset= URL + ' 2000w,' + URLmd + ' 1260w,' + URLsm + ' 760w'
+          data-srcset= URL + ' 2000w,' + URLmd + ' 1260w,' + URLsm + ' 720w'
         )
 
     block
@@ -53,6 +54,7 @@ mixin work-grid(fileName, imgCount)
       - let URLsm = baseURL + '-sm.jpg'
       .work__image
         img.lazy(
+          src= URLxs
           data-src= URL
-          data-srcset= URL + ' 2000w,' + URLmd + ' 1260w,' + URLsm + ' 760w'
+          data-srcset= URL + ' 2000w,' + URLmd + ' 1260w,' + URLsm + ' 720w'
         )

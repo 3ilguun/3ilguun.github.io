@@ -1,9 +1,15 @@
 extends layouts/_default
 
 block content
-  include components/_intro
-  include components/_works
-  include components/_footer
+  .container
+    include components/_intro
+    include components/_works
+    include components/_footer
+
+  .contact
+    a(href="mailto:hi@bilguun.design")
+      include ../images/contact.svg
+  .scroll-bar
 
 block scripts
   script(src="../js/app.js")

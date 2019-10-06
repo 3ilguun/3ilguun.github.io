@@ -1,9 +1,9 @@
 {
   "presets": [[
-    "env", {
-      "targets": {
-        "node": "current"
-      }
+    "minify", {
+      "builtIns": false,
+      "evaluate": false,
+      "mangle": true
     }
   ]]
 }
