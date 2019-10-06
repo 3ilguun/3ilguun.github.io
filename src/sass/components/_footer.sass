@@ -53,10 +53,6 @@
     padding-bottom: 0
     position: fixed
     z-index: 100
-    transform-origin: 50% 50%
-    animation: rotation 24s linear infinite
-    backface-visibility: hidden
-    will-change: transform
 
     &:hover .contact__icon
       transform: scale(.9)
@@ -71,6 +67,12 @@
       animation-name: zoom
       animation-duration: .75s
       animation-fill-mode: both
+
+  .loaded .contact
+    transform-origin: 50% 50%
+    animation: rotation 24s linear infinite
+    backface-visibility: hidden
+    will-change: transform
 
   .contact__icon
     transition: transform .25s ease-in-out
