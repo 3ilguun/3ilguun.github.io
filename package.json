@@ -10,7 +10,7 @@
     "build-en": "parcel build src/view/index.pug --public-url ./ --no-source-maps",
     "build-kr": "parcel build src/view/kr/index.pug --out-dir dist/kr/ --public-url ./ --no-source-maps",
     "copy": "copyfiles -f bilguun.png CNAME dist",
-    "deploy": "yarn build && gh-pages -d dist",
+    "deploy": "yarn build && gh-pages -b master -d dist",
     "clear": "rimraf .cache && rimraf dist"
   },
   "devDependencies": {
