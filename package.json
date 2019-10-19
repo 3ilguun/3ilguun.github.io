@@ -6,9 +6,11 @@
   "private": true,
   "scripts": {
     "dev": "parcel src/view/index.pug src/view/kr/index.pug",
-    "build": "yarn clear && concurrently 'yarn:build-en' 'yarn:build-kr'",
+    "build": "yarn clear && concurrently 'yarn:build-en' 'yarn:build-kr' && copy",
     "build-en": "parcel build src/view/index.pug --public-url ./ --no-source-maps",
     "build-kr": "parcel build src/view/kr/index.pug --out-dir dist/kr/ --public-url ./ --no-source-maps",
+    "copy": "cpx 'bilguun.png, CNAME' dist",
+    "deploy": "yarn build && gh-pages -d dist",
     "clear": "rimraf .cache && rimraf dist"
   },
   "devDependencies": {
@@ -18,6 +20,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-minify": "^0.5.1",
     "concurrently": "^5.0.0",
+    "cpx": "^1.5.0",
     "gh-pages": "^2.1.1",
     "parcel-bundler": "^1.12.3",
     "parcel-plugin-inliner": "^1.0.10",
