@@ -1,9 +1,0 @@
-{
-  "presets": [[
-    "minify", {
-      "builtIns": false,
-      "evaluate": false,
-      "mangle": true
-    }
-  ]]
-}
