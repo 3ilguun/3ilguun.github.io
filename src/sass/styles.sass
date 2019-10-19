@@ -21,21 +21,19 @@ body
   text-rendering: optimizeLegibility
   background-color: $color-black
 
-  &::before
-    top: 0
-    left: 0
-    right: 0
-    bottom: 0
-    content: ''
-    position: absolute
-    background-size: 100%
-    background: radial-gradient(ellipse at top left, #f5f2d3 5%, $color-grey 50%)
-    z-index: -1
-
   &.loaded
     background-color: $color-grey
 
     &::before
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      content: ''
+      position: absolute
+      z-index: -1
+      background-size: 100%
+      background: radial-gradient(ellipse at top left, #f5f2d3 5%, $color-grey 50%)
       animation: background 12s ease-in-out infinite
 
   &.loading
