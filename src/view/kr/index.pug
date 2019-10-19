@@ -1,0 +1,22 @@
+extends ../layouts/_kr
+
+block content
+  .container
+    include ../components/_intro-kr
+    include ../components/_works-kr
+    include ../components/_footer
+
+  .contact
+    a(href="mailto:hi@bilguun.design")
+      include ../../images/contact-kr.svg
+
+  .curtain
+    .logo__wrap
+      include ../../images/logo.svg
+    .morph__wrap
+      include ../../images/morph.svg
+
+  .scroll-bar  
+
+block scripts
+  script(src="../../js/app-kr.js")

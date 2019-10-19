@@ -67,10 +67,7 @@ class Scroll {
       const height = this.dom.content.offsetHeight;
       this.bounds.height = height;
       this.bounds.max = this.bounds.height - config.height;
-      // if (this.data.total === index && elems === this.dom.works[0]) {
-        // this.dom.content.style.height = `${height}px`;
-        document.body.style.height = `${height}px`;
-      // }
+      document.body.style.height = `${height}px`;
     });
   }
 
@@ -101,7 +98,7 @@ class Scroll {
     // skewY(${skew}deg)
     this.dom.content.style.transform = `translate3d(0, -${this.data.last.one.toFixed(2)}px, 0)`;
     const scale = math.norm(this.data.last.two, 0, this.bounds.max);
-    this.dom.scrollbar.style.transform = `scaleY(${scale})`;
+    this.dom.scrollbar.style.transform = `scaleX(${scale})`;
     this.requestAnimationFrame();
   }
 

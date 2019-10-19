@@ -3,7 +3,7 @@
   margin-top: $size-5
 
 .work + .work
-  margin-top: $size-4
+  margin-top: $size-5
 
 .work__header
   margin-top: $size-1 / 2
@@ -45,16 +45,17 @@
     top: 0
     left: 0
     right: 0
+    bottom: 0
     content: ''
-    height: 100%
     display: block
-    background-color: $color-black
     position: absolute
-    transition: height .75s cubic-bezier(1, 0, 1, 1)
+    background-color: $color-grey
+    transition: opacity .5s ease-in-out
+    pointer-events: none
     z-index: 1
 
   &.reveal::before
-    height: 0
+    opacity: 0
 
 .work__images-grid
   .work__image

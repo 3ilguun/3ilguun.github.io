@@ -5,13 +5,25 @@
 .intro__title
   color: $color-black
   font-size: $header-size
+  letter-spacing: -.032em
   line-height: $header-line-height
   margin-bottom: $header-margin
-  margin-left: -.25rem
+
+  & > i
+    letter-spacing: .032em
+
+  span
+    display: block
+    letter-spacing: -.064em
+
+  i
+    font-style: normal
 
 .intro__content
   font-size: $paragraph-size
   line-height: $paragraph-line-height
+  letter-spacing: $paragraph-letter-spacing
+  word-break: keep-all
 
   br
     display: none
@@ -22,6 +34,9 @@
     bottom: 0
   padding-left: 0
   list-style-type: none
+
+.intro__link
+  letter-spacing: .064em
 
 .links--social
   li
@@ -73,11 +88,6 @@
     transform-origin: bottom
 
 
-+media(xs)
-  .intro__content br
-    display: block
-
-
 +media(md)
   .intro
     padding-top: $size-1
@@ -85,11 +95,15 @@
   .intro__title
     font-size: $header-md-size
     line-height: $header-md-line-height
-    margin-bottom: $size-1
+    transition: opacity 100ms ease-in-out
 
   .intro__content
     font-size: $paragraph-md-size
     line-height: $paragraph-md-line-height
+    transition: opacity 100ms ease-in-out
+
+    br
+      display: block
 
   .scroll-indicator
     left: $size-1
@@ -97,7 +111,7 @@
 
 +media(lg)
   .intro
-    padding-top: $size-2 + $size-1
+    padding-top: $size-2
 
   .scroll-indicator
     left: 0

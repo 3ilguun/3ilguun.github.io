@@ -17,6 +17,6 @@ export function getSupportedTransform() {
 
 export function IEversion() {
   const ua = window.navigator.userAgent;
-  const ie = /MSIE|Trident|Edge\//.test(ua);
+  const ie = /MSIE|Trident/.test(ua);
   return ie;
 }

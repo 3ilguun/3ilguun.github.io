@@ -1,7 +1,0 @@
-mixin slides(title, imgCount)
-  .work__slides
-    - for (var x = 1; x < imgCount; x++)
-      - var URL = '../images/' + title + '/' + title + '-' + x + '.jpg'
-      - var URLsm = '../images/' + title + '/' + title + '-' + x + '-sm.jpg'
-      .work__slide
-        img( data-flickity-lazyload-src=URL )

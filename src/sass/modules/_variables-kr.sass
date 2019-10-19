@@ -2,7 +2,7 @@
 $base-font-size: 16px
 $base-line-height: 1.5
 $base-font-weight: 400
-$base-font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif
+$base-font-family: NanumMyeongjo, 'Malgun Gothic','맑은 고딕', Dotum, '돋움', Helvetica, "Apple SD Gothic Neo", serif
 $scale-factor: $base-line-height
 $vertical-rhythm: 1rem * 4
 
@@ -18,38 +18,39 @@ $size-6: $vertical-rhythm * 10
 
 //- Colors
 $color-white: #FFFFFF
-$color-black: #0D0D0D
+$color-black: #000000
 $color-yellow: #F8E71C
 $color-gray: rgba(0, 0, 0, .5)
 $color-grey: #F7F7F7
+$color-border: #E7E7E7
 
 
 //- Font family
-$font-family: "HelveticaNeue"
+$font-family: source-han-serif-korean
 $header-family: $font-family
 
 
 //- Header styles
 $header-color: $color-black
-$header-size: 4rem
-$header-weight: 700
-$header-line-height: 4rem
-$header-letter-spacing: -0.048em
+$header-size: $size-1
+$header-weight: 400
+$header-line-height: $header-size + .5rem
 $header-text-transform: uppercase
-$header-margin: 3rem
+$header-margin: $size-1
 
 $header-md-size: 6rem
-$header-md-line-height: $header-md-size
+$header-md-line-height: $header-md-size + 1rem
 
 
 //- Paragraph styles
 $paragraph-color: $color-black
-$paragraph-size: 1.25rem
-$paragraph-line-height: 1.75rem
+$paragraph-size: 1rem
+$paragraph-line-height: 2rem
+$paragraph-letter-spacing: 0.128em
 $paragraph-margin: 1.5rem
 
-$paragraph-md-size: 1.5rem
-$paragraph-md-line-height: 2rem
+$paragraph-md-size: 1.25rem
+$paragraph-md-line-height: 2.5rem
 
 
 //- Link styles

@@ -1,0 +1,23 @@
+//- Typography
+a
+  color: $link-color
+  text-decoration: $link-text-decoration
+
+  &:hover
+    color: $link-color-hover
+
+p
+  margin-top: $paragraph-margin
+  margin-bottom: 0
+
+h1,
+h2,
+h3
+  color: $header-color
+  font-weight: $header-weight
+  margin-top: 0
+
+
++media(md)
+  a
+    transition: color .1s ease-in-out
