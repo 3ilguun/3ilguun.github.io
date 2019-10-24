@@ -9,7 +9,7 @@
     "build": "yarn clear && concurrently 'yarn:build-en' 'yarn:build-kr' && yarn copy",
     "build-en": "parcel build src/view/index.pug --public-url ./ --no-source-maps",
     "build-kr": "parcel build src/view/kr/index.pug --out-dir dist/kr/ --public-url ./ --no-source-maps",
-    "copy": "copyfiles -f CNAME favicons/* facebook.jpg twitter.jpg dist",
+    "copy": "copyfiles -f CNAME facebook.jpg twitter.jpg dist",
     "deploy": "yarn build && gh-pages -b master -d dist",
     "clear": "rimraf .cache && rimraf dist"
   },
@@ -23,7 +23,6 @@
     "copyfiles": "^2.1.1",
     "gh-pages": "^2.1.1",
     "parcel-bundler": "^1.12.3",
-    "parcel-plugin-html-root-syntax": "^0.0.3",
     "parcel-plugin-inliner": "^1.0.10",
     "parcel-plugin-lazy": "^0.0.4",
     "pug": "^2.0.4",
