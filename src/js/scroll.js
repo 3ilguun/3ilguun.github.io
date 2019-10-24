@@ -98,7 +98,7 @@ class Scroll {
     // skewY(${skew}deg)
     this.dom.content.style.transform = `translate3d(0, -${this.data.last.one.toFixed(2)}px, 0)`;
     const scale = math.norm(this.data.last.two, 0, this.bounds.max);
-    this.dom.scrollbar.style.transform = `scaleX(${scale})`;
+    this.dom.scrollbar.style.transform = `scaleY(${scale})`;
     this.requestAnimationFrame();
   }
 
