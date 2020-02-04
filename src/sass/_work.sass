@@ -1,0 +1,111 @@
+.works
+  margin-top: $size-4
+
+.work + .work
+  margin-top: $size-2
+
+  +media(laptop)
+    margin-top: $size-3
+
+.work
+  position: relative
+
+.work__images--grid
+  padding:
+    left: 1rem
+    right: 1rem
+    top: $size-2
+    bottom: $size-2
+  background-color: $color-black
+
+  .work__image--block:last-child
+    margin-top: $gutter
+
+    +media(ipadHorizontal)
+      margin-top: 0
+
+  +media(ipad)
+    margin:
+      left: -1rem
+      right: -1rem
+
+  +media(ipadHorizontal)
+    margin:
+      left: 0
+      right: 0
+    padding:
+      top: $size-3
+      left: $size-1
+      right: $size-1
+      bottom: $size-3
+
+  +media(desktop)
+    padding:
+      top: $size-3
+      left: $size-2
+      right: $size-2
+      bottom: $size-3
+
+.lazy
+  display: block
+
+.work__header
+  left: 2rem
+  bottom: 2rem
+  position: absolute
+
+  +media(ipad)
+    left: 3rem
+
+  +media(laptop)
+    left: $size-1
+    bottom: $size-1
+
+  +media(desktop)
+    left: $size-2
+    bottom: $size-2
+
+.work__title
+  color: $color-white
+  font-size: $header-size
+  line-height: $header-line-height
+  margin-bottom: 0
+
+  +media(mobile)
+    font-size: $header-mobile-size
+    line-height: $header-mobile-line-height
+
+  +media(ipad)
+    font-size: $header-ipad-size
+
+  +media(laptop)
+    font-size: $header-laptop-size
+    line-height: $header-laptop-line-height
+
+  +media(desktop)
+    font-size: $header-desktop-size
+    line-height: $header-desktop-line-height
+
+.work__sub-title
+  color: $color-ice
+  font-size: $paragraph-size
+  line-height: $paragraph-line-height
+  margin-top: 0
+
+  +media(ipad)
+    margin-top: .5rem
+
+  +media(desktop)
+    font-size: $paragraph-desktop-size
+
+.is--lazyload
+  .work__image--animate
+    background-color: $color-black
+
+    img
+      opacity: 0
+      transition: opacity 2s ease-out
+
+    &.in--view
+      img
+        opacity: 1

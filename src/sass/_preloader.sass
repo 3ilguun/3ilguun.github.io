@@ -1,0 +1,17 @@
+.js
+  .preloader
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 999
+    position: fixed
+    background-color: $color-white
+    backdrop-filter: blur(16px)
+    transition: background-color 3s cubic-bezier(0, .5, .5, 1), backdrop-filter 3s cubic-bezier(0, .5, .5, 1)
+    pointer-events: none
+
+  .is--loaded
+    .preloader
+      background-color: transparent
+      backdrop-filter: blur(0)

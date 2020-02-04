@@ -1,0 +1,28 @@
+//- Media query
+=media ($class)
+  @if $class == mobile
+    @media (min-width: 24.99em)
+      @content
+
+  @else if $class == ipad
+    @media (min-width: 47.99em)
+      @content
+
+  @else if $class == ipadHorizontal
+    @media (min-width: 63.99em)
+      @content
+
+  @else if $class == laptop
+    @media (min-width: 84.99em)
+      @content
+
+  @else if $class == desktop
+    @media (min-width: 92.99em) and (min-height: 57.99em)
+      @content
+
+  @else
+    @warn 'Unknown breakpoint class'
+
+//- REM calculator
+@function rem($px, $base: $base-font-size)
+  @return ($px / $base) * 1rem

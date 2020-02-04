@@ -1,0 +1,45 @@
+include _mixins
+
+section.works
+  +work(
+    'Mibank',
+    'Branding identity',
+    'images/mibank/mibank',
+    'https://www.behance.net/gallery/87289745/Mibank-%28%29-Brand-Identity'
+  )
+  +work(
+    'Bilguun',
+    'Self branding',
+    'images/bilguun/bilguun',
+    'https://www.behance.net/gallery/57756621/Bilguun-Self-Branding'
+  )
+  +work(
+    'Chippo',
+    'Branding identity',
+    'images/chippo/chippo',
+    'https://www.behance.net/gallery/57756443/Chippo-%28%29-Brand-Identity'
+  )
+  +work(
+    'Qwave',
+    'Branding identity',
+    'images/qwave/qwave',
+    'https://www.behance.net/gallery/57756249/Qwave-Brand-Identity'
+  )
+  +work-grid
+    +work-image('images/selina/selina')
+    .row
+      .col--half
+        +work-image('images/qwave/qwave-web-1')
+      .col--half
+        +work-image('images/qwave/qwave-web-2')
+    .row
+      .col--half
+        +work-image('images/logos/logo-works-1')
+      .col--half
+        +work-image('images/logos/logo-works-2')
+    .row
+      .col--half
+        +work-image('images/logos/logo-works-3')
+      .col--half
+        +work-image('images/logos/logo-works-5')
+    +work-image('images/logos/logo-works-4')

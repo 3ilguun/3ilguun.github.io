@@ -1,0 +1,36 @@
+mixin work-image (fileName)
+  - let URL = fileName + '.jpg'
+  - let URLxs = fileName + '-xs.jpg'
+  - let URLmd = fileName + '-md.jpg'
+  - let URLsm = fileName + '-sm.jpg'
+  .work__image--block
+    .work__image--animate
+      img.lazy(
+        src= URLxs
+        data-src= URLmd
+        data-srcset=
+          URL + ' 2000w,' +
+          URLmd + ' 1260w,' +
+          URLsm + ' 720w'
+      )
+      
+
+mixin work (title, subTitle, fileName, href)
+  .work.work--grow
+    a(href= href)
+      if fileName
+        +work-image(fileName)
+        .work__border.border--top
+        .work__border.border--right
+        .work__border.border--bottom
+        .work__border.border--left
+      if title
+        .work__header
+          h1.work__title= title
+          if subTitle
+            p.work__sub-title= subTitle
+
+mixin work-grid
+  .work.work__images--grid
+    .work__inner
+      block

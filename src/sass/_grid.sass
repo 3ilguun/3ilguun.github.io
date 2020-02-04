@@ -1,0 +1,27 @@
+.row
+  margin-top: $gutter
+
+  +media(ipadHorizontal)
+    display: flex
+    flex-wrap: wrap
+    flex-direction: row
+    margin:
+      top: $gutter
+      bottom: $gutter
+      left: - $gutter / 2
+      right: - $gutter / 2
+
+.col--half
+  & + .col--half
+    margin-top: $gutter
+
+  +media(ipadHorizontal)
+    width: 50%
+    flex-basis: 50%
+    padding:
+      left: $gutter / 2
+      right: $gutter / 2
+    box-sizing: border-box
+
+    & + .col--half
+      margin-top: 0

@@ -1,0 +1,112 @@
+@import ../mixins
+@import settings
+@import fonts
+@import typography
+
+
+html
+  font-size: $base-font-size
+  line-height: $base-line-height
+  box-sizing: border-box
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  -webkit-text-size-adjust: 100%
+  -ms-text-size-adjust: 100%
+
+body
+  margin: 0
+  color: $color-black
+  font-family: $font-family, $base-font-family
+  text-rendering: optimizeLegibility
+  background-color: $color-background
+  word-break: keep-all
+
+img
+  border-style: none
+  width: 100%
+
+  +media(laptop)
+    max-width: 100%
+
+.wrapper
+  +media(ipad)
+    padding:
+      left: 1rem
+      right: 1rem
+
+  +media(ipadHorizontal)
+    padding:
+      left: 0
+      right: 0
+
+.hide
+  display: none
+
+  +media(ipadHorizontal)
+    display: block
+
+.link--email
+  display: inline-block
+  letter-spacing: rem(1px)
+  position: relative
+
+  &::before
+    right: 50%
+    left: -1rem
+    top: -1rem
+    bottom: -1rem
+    content: ''
+    display: block
+    position: absolute
+    background-color: rgba(255, 255, 255, .2)
+    background: linear-gradient(90deg, rgba(255, 255, 255, .2) 0%, rgba(255, 255, 255, 0) 100%)
+    z-index: -1
+
+  &:focus
+    outline: none
+
+    &::before
+      right: -1rem
+      background-color: $color-white
+      box-shadow: $link-box-shadow-style
+
+  +media(laptop)
+    user-select: none
+    transition: transform 100ms $link-transition-style
+    will-change: transform
+
+    &::before
+      left: -1.5rem
+      transition: all 200ms $link-transition-style
+
+    &:hover::before
+      background-color: $color-white
+      box-shadow: $link-box-shadow-style
+
+    &:hover::before,
+    &:focus::before
+      right: -1.5rem
+
+    &:active
+      transform: scale(.9)
+
+      &::before
+        box-shadow: none
+
++media(ipad)
+  .hide--xl
+    display: none
+
++media(laptop)
+  ::selection
+    background-color: rgba(0, 0, 0, .05)
+
+
+@import ../preloader
+@import intro
+@import work
+@import ../grid
+@import ../work-grow
+@import footer
+@import ../scroll
+@import ../cursor

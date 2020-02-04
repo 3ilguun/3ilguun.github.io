@@ -1,0 +1,7 @@
+{
+  "extends": "gulp",
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true
+  }
+}

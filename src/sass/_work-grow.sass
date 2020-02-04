@@ -1,0 +1,66 @@
+.transform.no-touch
+  .work__header
+    +media(laptop)
+      opacity: 0
+      transition: opacity .5s ease-in-out
+
+  .work__border
+    +media(laptop)
+      position: absolute
+      background-color: $color-background
+      backface-visibility: hidden
+      will-change: transform
+
+  .border--top,
+  .border--bottom
+    +media(laptop)
+      left: 0
+      width: 100%
+      height: $size-1
+      transition: transform .5s ease-in-out
+
+    +media(desktop)
+      height: $size-2
+
+  .border--left,
+  .border--right
+    +media(laptop)
+      top: 0
+      height: 100%
+      width: $size-1
+      transition: transform .5s ease-in-out
+
+    +media(desktop)
+      width: $size-2
+
+  .border--top
+    +media(laptop)
+      top: -1px //- FIX (flickering issue)
+      transform-origin: center top
+
+  .border--bottom
+    +media(laptop)
+      bottom: 0
+      transform-origin: center bottom
+
+  .border--left
+    +media(laptop)
+      left: 0
+      transform-origin: left center
+
+  .border--right
+    +media(laptop)
+      right: 0
+      transform-origin: right center
+
+  .is--grow
+    .work__header
+      opacity: 1
+
+    .border--top,
+    .border--bottom
+      transform: scale(1, 0)
+
+    .border--left,
+    .border--right
+      transform: scale(0, 1)

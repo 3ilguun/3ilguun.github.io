@@ -1,2 +1,2 @@
-import html5shiv from 'html5shiv';
-import respondJS from 'respond.js';
+import 'html5shiv';
+import 'respond.js/dest/respond.src';

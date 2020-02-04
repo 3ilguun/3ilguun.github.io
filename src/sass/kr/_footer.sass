@@ -1,0 +1,135 @@
+.footer
+  margin-top: $size-4
+  padding:
+    left: 1rem
+    right: 1rem
+    bottom: 2rem
+
+  +media(ipad)
+    padding:
+      left: 0
+      right: 0
+      bottom: $size-1
+
+  +media(ipadHorizontal)
+    padding:
+      left: $size-1
+      right: $size-1
+      bottom: 2rem
+
+  +media(desktop)
+    padding:
+      left: $size-2
+      right: $size-2
+      bottom: $size-1
+
+.footer__text
+  color: $color-black
+  font-size: $header-size
+  line-height: $header-line-height
+  margin-bottom: 0
+
+  +media(mobile)
+    font-size: $header-mobile-size
+    line-height: $header-mobile-line-height
+
+  +media(ipad)
+    font-size: $header-ipad-size
+
+  +media(laptop)
+    font-size: $header-laptop-size
+    line-height: $header-laptop-line-height
+
+  +media(desktop)
+    font-size: $header-desktop-size
+    line-height: $header-desktop-line-height
+
+.footer__contact
+  font-size: $paragraph-size
+  line-height: $paragraph-line-height
+  margin-top: 3rem
+
+.footer__links
+  margin-top: 2rem
+
+.social-links
+  display: flex
+  flex-wrap: wrap
+  flex-direction: row
+  padding-left: 0
+  list-style-type: none
+  margin:
+    top: 0
+    bottom: 0
+    left: -1rem
+
+.button
+  width: 3rem
+  height: 3rem
+  display: flex
+  align-items: center
+  justify-content: center
+  border-radius: 50%
+
+  &:focus
+    outline: none
+    box-shadow: $link-box-shadow-style
+
+    .icon
+      fill: $color-white
+
+  +media(laptop)
+    transition: all 200ms $link-transition-style
+    will-change: transform
+
+    .icon
+      transition: fill 200ms $link-transition-style
+
+    &:hover
+      .icon
+        fill: $color-white
+
+    &:focus
+      transform: scale(.8)
+
+.button--behance
+  &:focus
+    background-color: $color-behance
+
+  +media(laptop)
+    &:hover
+      background-color: $color-behance
+
+.button--dribbble
+  &:focus
+    background-color: $color-dribbble
+
+  +media(laptop)
+    &:hover
+      background-color: $color-dribbble
+
+.button--github
+  &:focus
+    background-color: $color-github
+
+  +media(laptop)
+    &:hover
+      background-color: $color-github
+
+.icon--behance
+  height: rem(18px)
+
+.icon--dribbble,
+.icon--github
+  height: 1rem
+
+.copyright
+  color: $color-grey
+  font-size: rem(10px)
+  line-height: 1.5rem
+  letter-spacing: rem(2px)
+  text-transform: uppercase
+  margin-top: $size-1
+
+  +media(ipad)
+    margin-top: $size-2
