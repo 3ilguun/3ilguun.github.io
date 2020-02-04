@@ -30,7 +30,7 @@ const paths = {
     dest: folder.dist + 'js/',
   },
   templates: {
-    watch: folder.src + 'pug/**/*.pug',
+    watch: folder.src + 'pug/**/**/*.pug',
     src: folder.src + 'pug/**/[^_]*.pug',
     dest: folder.dist,
   },

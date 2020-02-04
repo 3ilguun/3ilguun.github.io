@@ -1,0 +1,39 @@
+.cursor
+  display: none
+
++media(laptop)
+  .transform.no-touch
+    body
+      cursor: none
+
+    a:hover
+      cursor: none
+
+    .cursor
+      display: block
+      position: absolute
+      pointer-events: none
+
+    .cursor__ball
+      top: 0
+      left: 0
+      position: fixed
+      z-index: 99
+
+    .cursor__ball--big-icon
+      fill: $color-gray
+
+    .cursor__ball--work
+      color: $color-white
+      font-size: $paragraph-size
+      text-align: center
+      transform: scale(0)
+      padding:
+        top: rem(12px)
+        left: rem(14px)
+
+      +media(desktop)
+        font-size: $paragraph-desktop-size
+        padding:
+          top: rem(8px)
+          left: rem(10px)
