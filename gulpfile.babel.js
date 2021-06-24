@@ -3,7 +3,7 @@
 import gulp from 'gulp';
 import del from 'del';
 import browserSync from 'browser-sync';
-import sass from 'gulp-sass';
+import sass from 'gulp-dart-sass';
 import pug from 'gulp-pug';
 import plumber from 'gulp-plumber';
 import inlineSource from 'gulp-inline-source';
@@ -11,8 +11,6 @@ import autoprefixer from 'gulp-autoprefixer';
 import sourcemaps from 'gulp-sourcemaps';
 import cleanCSS from 'gulp-clean-css';
 import webpack from 'webpack-stream';
-
-sass.compiler = require('node-sass');
 
 const folder = {
   src: 'src/',
