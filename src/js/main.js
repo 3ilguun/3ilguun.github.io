@@ -84,11 +84,5 @@ window.onload = () => {
   }
 };
 
-console.log(
-  // eslint-disable-next-line max-len
-  '%c👋 Aloha! Do you have questions about this website?\nFeel free to reach out and say hi anytime 👍\nhello@bilguun.design',
-  'color: #fff;background-color: #000;padding:8px;'
-);
-
 import 'rem-unit-polyfill/js/rem';
 import 'intersection-observer/intersection-observer';
