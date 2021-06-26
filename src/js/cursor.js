@@ -1,6 +1,6 @@
 'use strict';
 
-import { TweenMax, Power4 } from 'gsap';
+import gsap from 'gsap';
 
 const cursor = {
   ball: document.querySelector('.cursor__ball'),
@@ -14,19 +14,22 @@ const cursor = {
 };
 
 const onMouseMove = (event) => {
-  TweenMax.to(cursor.ballBig, 0.3, {
+  gsap.to(cursor.ballBig, {
+    duration: 0.3,
     x: event.clientX - 30,
     y: event.clientY - 30,
   });
 
-  TweenMax.to(cursor.ballWork, 0.35, {
+  gsap.to(cursor.ballWork, {
+    duration: 0.35,
     x: event.clientX - 40,
     y: event.clientY - 45,
   });
 };
 
 const onMouseHighlight = () => {
-  TweenMax.to(cursor.ballBig, 0.3, {
+  gsap.to(cursor.ballBig, {
+    duration: 0.3,
     scale: 2,
   });
   cursor.ball.style.mixBlendMode = 'difference';
@@ -34,7 +37,8 @@ const onMouseHighlight = () => {
 };
 
 const onMouseHighlightOut = () => {
-  TweenMax.to(cursor.ballBig, 0.3, {
+  gsap.to(cursor.ballBig, {
+    duration: 0.3,
     scale: 1,
   });
   cursor.ball.style.mixBlendMode = 'normal';
@@ -42,17 +46,20 @@ const onMouseHighlightOut = () => {
 };
 
 const onMouseHoverWork = (event) => {
-  TweenMax.to(cursor.ballBig, 0.3, {
+  gsap.to(cursor.ballBig, {
+    duration: 0.3,
     scale: 2,
   });
 
-  TweenMax.to(cursor.ballWork, 0.35, {
+  gsap.to(cursor.ballWork, {
+    duration: 0.35,
     scale: 1,
   });
 
-  TweenMax.to(event.target.children[0], 1, {
+  gsap.to(event.target.children[0], {
+    duration: 1,
     scale: 1.2,
-    ease: Power4.easeOut,
+    // ease: Power4.easeOut,
   });
 
   // cursor.ball.style.mixBlendMode = 'difference';
@@ -60,17 +67,20 @@ const onMouseHoverWork = (event) => {
 };
 
 const onMouseHoverWorkOut = (event) => {
-  TweenMax.to(cursor.ballBig, 0.3, {
+  gsap.to(cursor.ballBig, {
+    duration: 0.3,
     scale: 1,
   });
 
-  TweenMax.to(cursor.ballWork, 0.35, {
+  gsap.to(cursor.ballWork, {
+    duration: 0.35,
     scale: 0,
   });
 
-  TweenMax.to(event.target.children[0], 1, {
+  gsap.to(event.target.children[0], {
+    duration: 1,
     scale: 1.1,
-    ease: Power4.easeOut,
+    // ease: Power4.easeOut,
   });
 
   // cursor.ball.style.mixBlendMode = 'normal';
@@ -118,7 +128,8 @@ const mouseLinkFollow = (element, event, className) => {
   const distance = calculateDistance(item, mouseX, mouseY);
 
   if (distance < customDistance) {
-    TweenMax.to(item, 0.5, {
+    gsap.to(item, {
+      duration: 0.5,
       x: deltaX,
       y: deltaY,
     });
@@ -129,7 +140,8 @@ const mouseLinkFollow = (element, event, className) => {
       item.classList += `${ className }`;
     }
   } else {
-    TweenMax.to(item, 0.6, {
+    gsap.to(item, {
+      duration: 0.6,
       x: 0,
       y: 0,
     });
@@ -156,7 +168,8 @@ const mouseLinkFollowHandle = () => {
       mouseLinkFollow(cursor.isHover[i], event, cursor.isActive);
 
       if (cursor.isHover[i].classList.contains(cursor.isHover)) {
-        TweenMax.to(cursor.ballBig, 0.3, {
+        gsap.to(cursor.ballBig, {
+          duration: 0.3,
           scale: 3,
         });
       }
