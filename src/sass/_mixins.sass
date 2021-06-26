@@ -1,4 +1,5 @@
-//- Media query
+@use 'sass:math'
+
 =media ($class)
   @if $class == mobile
     @media (min-width: 24.99em)
@@ -25,4 +26,4 @@
 
 //- REM calculator
 @function rem($px, $base: $base-font-size)
-  @return ($px / $base) * 1rem
+  @return (math.div($px, $base)) * 1rem

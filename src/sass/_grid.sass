@@ -1,3 +1,5 @@
+@use 'sass:math'
+
 .row
   margin-top: $gutter
 
@@ -8,8 +10,8 @@
     margin:
       top: $gutter
       bottom: $gutter
-      left: - $gutter / 2
-      right: - $gutter / 2
+      left: - math.div($gutter, 2)
+      right: - math.div($gutter, 2)
 
 .col--half
   & + .col--half
@@ -19,8 +21,8 @@
     width: 50%
     flex-basis: 50%
     padding:
-      left: $gutter / 2
-      right: $gutter / 2
+      left: math.div($gutter, 2)
+      right: math.div($gutter, 2)
     box-sizing: border-box
 
     & + .col--half
